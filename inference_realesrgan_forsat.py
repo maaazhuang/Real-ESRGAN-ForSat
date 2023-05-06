@@ -86,8 +86,8 @@ def main():
     """Inference demo for Real-ESRGAN."""
     # 1、参数获取
     parser = argparse.ArgumentParser()
-    parser.add_argument('-i', '--input', type=str, default='input1', help='Input image or folder')
-    parser.add_argument('-o', '--output', type=str, default='output1', help='Output folder')
+    parser.add_argument('-i', '--input', type=str, default='input', help='Input image or folder')
+    parser.add_argument('-o', '--output', type=str, default='output', help='Output folder')
     parser.add_argument('-n', '--model_name', type=str, default='RealESRGAN_x4plus',
                         help='Model names: RealESRGAN_x4plus | RealESRNet_x4plus  | RealESRGAN_x2plus')
     parser.add_argument('-m', '--model_path', type=str, default='./weights/net_ESRNet_1000k.pth', help='[Option] Model path')
