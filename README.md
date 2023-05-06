@@ -56,7 +56,7 @@ Real-ESRGAN-ForSat based on Real-ESRGAN for Satellite Image Restoration
  
  3. 添加inference_realesrgan_forsat.py、scripts/utils_tif.py文件
  
- 4. 更改inference_realesrgan_forsat.py代码中input、output、weights 
+ 4. 设置inference_realesrgan_forsat.py代码中input、output、weights，并准备对应文件
  
     [个人训练模型](https://pan.baidu.com/s/1upLhwP8PsGD8GStV2XkhQA?pwd=fhu7)（北京三号卫星0.5m分辨率影像训练模型）
  
