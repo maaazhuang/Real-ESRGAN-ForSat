@@ -176,7 +176,7 @@ def main():
         add_coor(file_path, args.output, merge_path, outscale)
 
         # 删除临时文件
-        # shutil.rmtree(process_path)
+        shutil.rmtree(process_path)
 
 if __name__ == '__main__':
     main()
