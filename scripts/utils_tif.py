@@ -16,7 +16,6 @@ def tif_crop(in_path, out_path, crop_size, overlap_size):
         img = tiff.imread(in_path)
         if img.shape[2] != 3:
             img = img.transpose(1, 2, 0)
-        # img = cv2.imread(in_path)     # 可替换上面两行，但是图像过大时不知道是否会报错
     else:
         img = cv2.imread(in_path, -1)
 
@@ -70,7 +69,7 @@ def tif_merge(in_path, out_path, rows, cols):
     hstack_path = out_path + os.sep + "h"
     os.makedirs(hstack_path, exist_ok=True)
 
-    # 方式一(报错, 提示说维度不统一)
+    # 方式一
     for i in range(rows):
         img_path1 = file_paths_h[i * cols]
         img_h = tiff.imread(img_path1)
@@ -186,55 +185,12 @@ def add_coor(in_path, out_path, merge_path, scale):
 
     print("Add Coordinate Complete!!!")
 
-# if __name__ == '__main__':
-#     in_path = "D:/MZ/SR/data/Aomen.tif"
-#     out_path = "D:/MZ/SR/data"
-#     crop_size = 512
-#
-#     time1 =time.time()
-#     crop_path, rows, cols = tif_crop(in_path, out_path, crop_size)
-#     # tif_crop_exblack(in_path, out_path, crop_size)
-#
-#     # in_path2 = "D:/MZ/SR/data/crop"
-#     # out_path2 = "D:/MZ/SR/data/merge"
-#     time2 = time.time()
-#     print(time2-time1)
-#
-#     merge_path = tif_merge(crop_path, out_path, rows, cols)
-#     time3 = time.time()
-#     print(time3 - time2)
-#
-#     # merge_path = "D:/MZ/SR/data/merge/v/merge.png"
-#     scale = 1
-#     add_coor(in_path, out_path, merge_path, scale)
-#     time4 = time.time()
-#     print(time4 - time3)
-#
-#     # img = cv2.imread(files[0])
-#
-#     # ds = gdal.Open(in_path)
-#     # img2 = ds.ReadAsArray()
-#
-#     print()
 
 # if __name__ == '__main__':
-# #     # in_path = "D:/MZ/SR/data/Aomen.tif"
-# #     # out_path = "D:/MZ/SR/data/output2"
-# #     # crop_size = 2000
-# #     # overlap_size = 200
-# #     #
-# #     # tif_crop(in_path, out_path, crop_size, overlap_size)
-# #
-# #     # in_path = r"D:\MZ\SR\Real-ESRGAN-ma\output3\temp\sr"
-# #     # out_path = r"D:\MZ\SR\Real-ESRGAN-ma\output3\temp"
-# #     # height, width = 14820, 16148
-# #     # crop_size = 512
-# #     # scale = 2
-# #     # sr_crop(in_path, out_path, height, width, crop_size, scale)
-# #
-#     rows, cols = 29, 32
-#     process_path = r"D:\MZ\SR\Real-ESRGAN-ma\output5\temp"
-#     crop_path2 = r"D:\MZ\SR\Real-ESRGAN-ma\output5\temp\crop2"
-#     merge_path = tif_merge(crop_path2, process_path, rows, cols)
-#
-#     print()
+#     in_path = "D:/MZ/SR/data/Aomen.tif"
+#     out_path = "D:/MZ/SR/data/output"
+#     crop_size = 2000
+#     overlap_size = 200
+#     
+#     tif_crop(in_path, out_path, crop_size, overlap_size)
+
